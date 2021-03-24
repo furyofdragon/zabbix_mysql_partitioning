@@ -1,0 +1,8 @@
+28 2 * * * root echo -e '\n'`date` >> /tmp/zab-part 2>&1 ; mysql -uroot --password="" -b zabbix2 -e "CALL partition_maintenance('zabbix2', 'history',       7, 24, 14);" >> /tmp/zab-part 2>&1
+33 2 * * * root echo -e '\n'`date` >> /tmp/zab-part 2>&1 ; mysql -uroot --password="" -b zabbix2 -e "CALL partition_maintenance('zabbix2', 'history_log',   7, 24, 14);" >> /tmp/zab-part 2>&1
+37 2 * * * root echo -e '\n'`date` >> /tmp/zab-part 2>&1 ; mysql -uroot --password="" -b zabbix2 -e "CALL partition_maintenance('zabbix2', 'history_str',   7, 24, 14);" >> /tmp/zab-part 2>&1
+41 2 * * * root echo -e '\n'`date` >> /tmp/zab-part 2>&1 ; mysql -uroot --password="" -b zabbix2 -e "CALL partition_maintenance('zabbix2', 'history_uint',  7, 24, 14);" >> /tmp/zab-part 2>&1
+48 2 * * * root echo -e '\n'`date` >> /tmp/zab-part 2>&1 ; mysql -uroot --password="" -b zabbix2 -e "CALL partition_maintenance('zabbix2', 'history_text',  7, 24, 14);" >> /tmp/zab-part 2>&1
+07 2 * * * root echo -e '\n'`date` >> /tmp/zab-part 2>&1 ; ionice -c3 mysql -uroot --password="" -b zabbix2 -e "CALL partition_maintenance('zabbix2', 'trends',      365, 24, 14);" >> /tmp/zab-part 2>&1
+58 2 * * * root echo -e '\n'`date` >> /tmp/zab-part 2>&1 ; ionice -c3 mysql -uroot --password="" -b zabbix2 -e "CALL partition_maintenance('zabbix2', 'trends_uint', 365, 24, 14);" >> /tmp/zab-part 2>&1
+
